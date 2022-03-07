@@ -13,4 +13,4 @@ phases:
       - echo Build completed on `date`
 artifacts:
   files:
-    - target2/beanstalk.jar
+    - beanstalk.jar
