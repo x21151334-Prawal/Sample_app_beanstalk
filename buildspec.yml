@@ -16,7 +16,7 @@ phases:
     commands:
       - echo Build completed on `date`
       - python --version
-      - pylint $CODEBUILD_SRC_DIR/demoproj/*.py
+      - pylint $CODEBUILD_SRC_DIR/*.py
 artifacts:
   files:
     - target/messageUtil-1.0.jar
