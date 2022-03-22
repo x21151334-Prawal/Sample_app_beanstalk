@@ -4,6 +4,10 @@ phases:
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
+      - pip install --upgrade pip
+      # Install dependencies needed for running the static analysis
+      - pip install -r requirements.txt pylint
+
   build:
     commands:
       - echo Build started on `date`
@@ -11,6 +15,8 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+      - python --version
+      - pylint $CODEBUILD_SRC_DIR/demoproj/*.py
 artifacts:
   files:
     - target/messageUtil-1.0.jar
